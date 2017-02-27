@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --require init.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +12,7 @@
     "request": "^2.79.0"
   },
   "devDependencies": {
+    "isomorphic-fetch": "^2.2.1",
     "mocha": "^3.2.0"
   }
 }
