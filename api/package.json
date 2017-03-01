@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.79.0"
   },
   "devDependencies": {
     "isomorphic-fetch": "^2.2.1",
