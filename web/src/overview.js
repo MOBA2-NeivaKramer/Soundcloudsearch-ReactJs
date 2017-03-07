@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {browserHistory, Link} from "react-router";
 import api from 'api';
 
 export default class Overview extends Component {
@@ -27,8 +28,8 @@ export default class Overview extends Component {
                 <tbody>
                 {this.state.locations.map((location, index) => {
                     return <tr>
-                        <td key={index}>{location.name}</td>
-                    </tr>
+                            <td key={index}><Link to={`/stationboard/${location.id}`}>{location.name}</Link></td>
+                        </tr>
                 })
                 }
                 </tbody>
