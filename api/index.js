@@ -12,12 +12,12 @@ exports.findLocation = query => {
 
 /**
  * Example (location from searchLocations):
- * exports.getStationboard(location)
+ * exports.getStationboard(location.id)
  *     .then(stationboard => console.log(stationboard))
  *     .catch(e => console.error(e))
  */
-exports.getStationboard = location => {
-    return get('stationboard', {id: location.id})
+exports.getStationboard = locationId => {
+    return get('stationboard', {id: locationId})
 };
 
 const request = require('request')

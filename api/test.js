@@ -10,7 +10,7 @@ describe('api', () => {
     });
 
     it('returns the stationboard', () => {
-        return api.getStationboard({ id: '008506000'}).then(result => {
+        return api.getStationboard('008506000').then(result => {
             assert.ok(result.station);
             assert.ok(result.stationboard);
         })
