@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import api from '../../api/index';
+import api from 'api';
 
 export default class Overview extends Component {
 
