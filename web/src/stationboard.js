@@ -6,7 +6,7 @@ export default class Stationboard extends Component {
     constructor(props) {
         super(props);
         this.getStationboard();
-        this.state = { stationboard: {} };
+        this.state = { stationboard: [] };
     }
 
     getStationboard() {
@@ -19,10 +19,33 @@ export default class Stationboard extends Component {
     render() {
         return (
             <div>
-                <h1>STATION BOARD</h1>
-                {JSON.stringify(this.state.stationboard)}
+                <h1>Station Board</h1>
+                <StationboardTable stationboard={this.state.stationboard}/>
             </div>
         );
     }
 
+}
+
+function StationboardTable({ stationboard }) {
+    return (
+        <table>
+            <thead>
+                <tr>
+                    <th>Departure</th>
+                    <th>Name</th>
+                    <th>Destination</th>
+                </tr>
+            </thead>
+            <tbody>
+                {stationboard.map((departure, i) =>
+                    <tr key={i}>
+                        <td>{departure.stop.departure}</td>
+                        <td>{departure.name}</td>
+                        <td>{departure.to}</td>
+                    </tr>
+                )}
+            </tbody>
+        </table>
+    );
 }

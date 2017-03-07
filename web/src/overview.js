@@ -27,8 +27,8 @@ export default class Overview extends Component {
                 </thead>
                 <tbody>
                 {this.state.locations.map((location, index) => {
-                    return <tr>
-                            <td key={index}><Link to={`/stationboard/${location.id}`}>{location.name}</Link></td>
+                    return <tr key={index}>
+                            <td><Link to={`/stationboard/${location.id}`}>{location.name}</Link></td>
                         </tr>
                 })
                 }
