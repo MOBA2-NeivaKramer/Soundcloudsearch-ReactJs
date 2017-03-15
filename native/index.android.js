@@ -9,23 +9,20 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
+  Image,
   View
 } from 'react-native';
 
-export default class native extends Component {
+export default class transportsearch extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          LUCAS. Es fucking funktioniert!!
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+          <Image
+              source={require('./resources/jizzface.png')}
+          />
       </View>
     );
   }
@@ -50,4 +47,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('native', () => native);
+AppRegistry.registerComponent('transportsearch', () => transportsearch);

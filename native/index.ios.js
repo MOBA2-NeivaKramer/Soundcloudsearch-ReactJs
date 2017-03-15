@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-export default class native extends Component {
+export default class transportsearch extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('native', () => native);
+AppRegistry.registerComponent('transportsearch', () => transportsearch);
