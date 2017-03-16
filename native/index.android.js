@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, View } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 import Search from './app/search';
+// import Overview from './app/overview';
 
-export default class transportsearch extends Component {
+export default class Transportsearch extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Search/>
+        <Search navigation={this.props.navigation}/>
       </View>
     );
   }
@@ -20,4 +22,10 @@ const styles = StyleSheet.create({
     }
 });
 
-AppRegistry.registerComponent('transportsearch', () => transportsearch);
+const App = StackNavigator({
+    Home: { screen: Transportsearch },
+    Search: { screen: Search },
+    // Overview: { screen: Overview },
+});
+
+AppRegistry.registerComponent('transportsearch', () => App);

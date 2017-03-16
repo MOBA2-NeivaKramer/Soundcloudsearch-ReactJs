@@ -9,6 +9,7 @@ export default class Search extends Component {
     }
 
     render() {
+        const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
                 <TextInput
@@ -16,7 +17,9 @@ export default class Search extends Component {
                     onChangeText={(text) => this.setState({text})}
                     value={this.state.text}
                 />
-                <Button title="Search"/>
+                <Button title="Search"
+                        onPress={() => navigate('Overview', {location: this.state.text})}
+                />
             </View>
         );
     }
