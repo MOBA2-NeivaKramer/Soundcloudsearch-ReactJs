@@ -1,10 +1,11 @@
+//@flow
 import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, View, ListView, Text, TouchableHighlight} from 'react-native';
 import api from 'api';
 
-export default class Overview extends Component {
+export default class Stationboard extends Component {
     static navigationOptions = {
-        title: 'Overview',
+        title: 'Stationboard',
     };
 
     constructor(props) {
@@ -12,15 +13,13 @@ export default class Overview extends Component {
         const { params } = props.navigation.state;
         const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
-            stations: [],
             dataSource: ds.cloneWithRows([])
         };
 
-        api.findLocation(params.location).then(result => {
-            this.setState({
-                stations: result.stations,
-                dataSource: ds.cloneWithRows(result.stations)});
-        });
+        api.getStationboard(params.location.id).then(result => {
+            console.log('Stationboard', result)
+            this.setState({dataSource: ds.cloneWithRows(result.stationboard)});
+        })
     }
 
     render() {
@@ -34,17 +33,10 @@ export default class Overview extends Component {
     }
 
     renderRow(rowData: string, sectionID: number, rowID: number, highlightRow: (sectionID: number, rowID: number) => void) {
-        return (
-            <TouchableHighlight onPress={() => { this.pressRow(sectionID, rowID); highlightRow(sectionID, rowID); } }>
-                <View style={{height: 30}}>
-                    <Text>{rowData.name}</Text>
-                </View>
-            </TouchableHighlight>
-        )
-    }
-
-    pressRow(sectionID, rowID) {
-        const location = this.state.stations[rowID]
-        this.props.navigation.navigate('Stationboard', { location })
+        return <TouchableHighlight>
+            <View style={{height: '30px'}}>
+                <Text>{rowData.name}</Text>
+            </View>
+        </TouchableHighlight>
     }
 }

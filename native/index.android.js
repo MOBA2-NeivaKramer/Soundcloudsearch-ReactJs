@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, View, TextInput, Button} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import Overview from './app/overview';
+import Stationboard from './app/stationboard'
 
 export default class Transportsearch extends Component {
     static navigationOptions = {
@@ -41,8 +42,8 @@ const styles = StyleSheet.create({
 
 const App = StackNavigator({
     Home: {screen: Transportsearch},
-    // Search: { screen: Search },
     Overview: {screen: Overview},
+    Stationboard: {screen: Stationboard}
 });
 
 AppRegistry.registerComponent('transportsearch', () => App);
