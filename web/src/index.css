@@ -1,5 +1,21 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 1em 5em;
   font-family: sans-serif;
+}
+
+table th {
+  text-align: left;
+}
+
+table {
+  width: 100%;
+}
+
+table td, th {
+  padding: 0.5em 0.5em;
+}
+
+tr:nth-child(even) {
+  background: #eee;
 }
