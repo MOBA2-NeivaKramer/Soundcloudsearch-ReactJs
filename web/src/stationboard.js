@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import api from 'api';
+import Moment from 'moment';
 
 export default class Stationboard extends Component {
 
@@ -40,7 +41,7 @@ function StationboardTable({ stationboard }) {
             <tbody>
                 {stationboard.map((departure, i) =>
                     <tr key={i}>
-                        <td>{departure.stop.departure}</td>
+                        <td>{Moment(departure.stop.departure).fromNow()}</td>
                         <td>{departure.name}</td>
                         <td>{departure.to}</td>
                     </tr>
